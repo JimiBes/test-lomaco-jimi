@@ -25,13 +25,15 @@ function UserModal () {
       };
 
     return (
-        <div className="user-modal-container">
+       <div className="user-modal-container">
+        <div className="user-modal-header">
             <h2>Utilisateurs</h2>
-            <div className="user-modal-content">
-                <Input />
-                <UserList users={users} onDelete={handleDeleteUser} />
-            </div>
+            <Input />
         </div>
+        <div className="user-modal-content">
+            <UserList users={users} onDelete={handleDeleteUser} />
+        </div>
+       </div>
     )
 }
 
