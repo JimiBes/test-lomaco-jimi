@@ -1,0 +1,14 @@
+@import 'colors';
+
+.user-modal-container{
+    height: 100vh;
+    width: 100vw;
+    background-color: $light;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    position: absolute;
+    h2 {
+        font-size: 35px;
+
+    }
+}

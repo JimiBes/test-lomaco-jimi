@@ -1,0 +1,36 @@
+@import 'colors';
+
+.input-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100vw;
+
+    .input-style {
+        height: 50px;
+        width: 75%;
+        border: 1px solid $gray;
+        border-radius: 3px;
+
+        &::placeholder {
+            color: $gray;
+            font-size: 16px;
+            padding-left: 1rem;
+        }
+    }
+
+    .button-style {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $success;
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+
+        img {
+            width: 25px;
+            height: 25px;
+        }
+    }
+}
