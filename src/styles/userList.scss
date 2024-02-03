@@ -1,0 +1,44 @@
+@import 'colors';
+@import 'text';
+@import 'styles';
+
+.user-list-container{
+    font-weight: 600;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    padding: 0;
+    overflow-y: auto;
+    .user-item {
+        display: flex;
+        list-style: none;
+        border-bottom: 2px solid $border;
+        justify-content: space-between;
+        align-items: center;
+        &:first-child {
+            border-top: 2px solid $border;
+        }
+        .user-info {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            margin: 0;
+            padding: 0.5rem 0;
+            p {
+                display: flex;
+                align-items: center;
+                margin: 0;
+                line-height: 1.5;
+                height: 2rem;
+            }
+        }
+        .delete-button {
+            background-color: $danger;
+            border-radius: 50%;
+            height: 50px;
+            width: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
