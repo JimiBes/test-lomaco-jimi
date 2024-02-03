@@ -4,7 +4,7 @@ import deleteButton from '../assets/img/icon-trash-white.svg';
 
 const UserList = ({ users, onDelete }) => {
   return (
-    <ul className="user-list">
+    <ul className="user-list-container">
       {users.map((user) => (
         <li key={user.id} className="user-item">
           <div className="user-info">

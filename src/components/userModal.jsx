@@ -27,8 +27,10 @@ function UserModal () {
     return (
         <div className="user-modal-container">
             <h2>Utilisateurs</h2>
-            <Input />
-            <UserList users={users} onDelete={handleDeleteUser} />
+            <div className="user-modal-content">
+                <Input />
+                <UserList users={users} onDelete={handleDeleteUser} />
+            </div>
         </div>
     )
 }
