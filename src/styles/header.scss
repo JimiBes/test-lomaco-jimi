@@ -1,6 +1,8 @@
 @import 'styles';
 
 header {
+    position: fixed;
+    top: 0;
     .logo-container{
         display: flex;
         justify-content: center;
@@ -13,4 +15,16 @@ header {
         }
     }
 }
+
+@media (min-width: 780px) {
+    header {
+        .logo-container{
+            img {
+                width: 6rem;
+                height: 6rem;
+                padding-top: 4rem;
+            }
+        }
+    }
+  }
 

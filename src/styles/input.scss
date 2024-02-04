@@ -10,6 +10,7 @@
         border: 2px solid $border;
         border-radius: 3px;
         width: 75%;
+        padding-left: 1rem;
         &::placeholder {
             color: $gray;
             font-size: 16px;
@@ -29,6 +30,20 @@
         img {
             width: 25px;
             height: 25px;
+        }
+    }
+}
+
+@media (min-width: 780px) {
+    .input-container {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        width: 100%;
+        gap: 1rem;
+        .input-style {
+            padding-left: 0;
+            width: 50%;
         }
     }
 }
