@@ -1,6 +1,7 @@
-import '../styles/navBar.scss';
+import '../styles/navBar.scss'; 
+import PropTypes from 'prop-types';
 
-function NavBar({ isOpen, onClose }) {
+function NavBar({ isOpen }) {
     return (
         <div className={`modal ${isOpen ? 'open' : ''}`}>
             <div className="modal-content">
@@ -13,6 +14,10 @@ function NavBar({ isOpen, onClose }) {
             </div>
         </div>
     );
+}
+
+NavBar.propTypes = {
+    isOpen: PropTypes.bool.isRequired,
 }
 
 export default NavBar;

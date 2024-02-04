@@ -1,38 +1,41 @@
-import React, { useState } from 'react';
-import '../styles/addUserModal.scss';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
+import '../styles/addUserModal.scss';
 
-const AddUserModal = ({ isOpen, onCancel, onAddUser }) => {
-  const [userName, setUserName] = useState('');
-  const [userEmail, setUserEmail] = useState('');
+const AddUserModal = ({ isOpen, onCancel }) => {
+    
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
 
-  const handleCancel = () => {
-    onCancel();
-    setUserName('');
-    setUserEmail('');
-  };
 
-  const handleAddUser = () => {
-    onAddUser({ name: userName, email: userEmail });
-    setUserName('');
-    setUserEmail('');
-  };
-
+  if (!isOpen) {
+    return null;
+  }
   return (
-    <div className={`modal-container ${isOpen ? 'open' : ''}`}>
+    <div className={`add-modal-container ${isOpen ? 'open' : ''}`}>
       <div className="add-user-modal">
-        <p>Ajouter un nouvel utilisateur</p>
+        <p>Ajouter un utilisateur</p>
         <div className="input-container">
-          <label>Nom:</label>
-          <input type="text" value={userName} onChange={(e) => setUserName(e.target.value)} placeholder='Prénom Nom'/>
+          <label>Nom</label>
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder="Prénom Nom"
+          />
         </div>
         <div className="input-container">
-          <label>Email:</label>
-          <input type="text" value={userEmail} onChange={(e) => setUserEmail(e.target.value)} placeholder='prenom.nom@societe.fr'/>
+          <label>Email</label>
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="prenom.nom@societe.fr"
+          />
         </div>
         <div className="button-container">
-          <button onClick={handleAddUser}>Ajouter</button>
-          <button onClick={handleCancel}>Annuler</button>
+          <button onClick={onCancel}>Ajouter</button>
+          <button onClick={onCancel}>Annuler</button>
         </div>
       </div>
     </div>

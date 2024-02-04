@@ -7,7 +7,7 @@ const DeleteConfirmationModal = ({ isOpen, onCancel, onConfirm, userName }) => {
   }
 
   return (
-    <div className="modal-container">
+    <div className="delete-modal-container">
       <div className="delete-confirmation-modal">
         <p>{`Veuillez confirmer la suppression de l'utilisateur ${userName}`}</p>
         <div className="delete-buttons">

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import '../styles/burgerButton.scss';
 import NavBar from './navBar';
 

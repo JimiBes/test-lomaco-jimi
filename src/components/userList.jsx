@@ -1,14 +1,12 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import '../styles/userList.scss';
 import PropTypes from 'prop-types';
 import deleteButton from '../assets/img/icon-trash-white.svg';
 import DeleteConfirmationModal from './deleteConfirmationModal';
-import AddUserModal from './addUserModal';
 
-const UserList = ({ users, onDelete, onAddUser }) => {
+const UserList = ({ users, onDelete }) => {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [selectedUserId, setSelectedUserId] = useState(null);
-  const [showAddUserModal, setShowAddUserModal] = useState(false);
 
   const handleDeleteClick = (userId) => {
     setSelectedUserId(userId);
@@ -31,19 +29,6 @@ const UserList = ({ users, onDelete, onAddUser }) => {
     setSelectedUserId(null);
   };
 
-  const handleAddUserClick = () => {
-    setShowAddUserModal(true);
-  };
-
-  const handleCancelAddUser = () => {
-    setShowAddUserModal(false);
-  };
-
-  const handleAddUser = (newUser) => {
-    onAddUser(newUser);
-    setShowAddUserModal(false);
-  };
-
   return (
     <>
       <ul className="user-list-container">
@@ -60,18 +45,12 @@ const UserList = ({ users, onDelete, onAddUser }) => {
         ))}
       </ul>
 
-      <button onClick={handleAddUserClick} className="add-user-button">
-        Ajouter un utilisateur
-      </button>
-
       <DeleteConfirmationModal
         isOpen={showDeleteModal}
         onCancel={handleCancelDelete}
         onConfirm={handleConfirmDelete}
         userName={selectedUserId ? users.find(user => user.id === selectedUserId)?.name : ''}
       />
-
-      <AddUserModal isOpen={showAddUserModal} onCancel={handleCancelAddUser} onAddUser={handleAddUser} />
     </>
   );
 };
@@ -85,7 +64,6 @@ UserList.propTypes = {
     })
   ).isRequired,
   onDelete: PropTypes.func.isRequired,
-  onAddUser: PropTypes.func.isRequired,
 };
 
 export default UserList;
