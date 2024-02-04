@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import '../styles/userList.scss';
 import PropTypes from 'prop-types';
 import deleteButton from '../assets/img/icon-trash-white.svg';
@@ -18,8 +18,13 @@ const UserList = ({ users, onDelete }) => {
     setSelectedUserId(null);
   };
 
-  const handleConfirmDelete = () => {
-    onDelete(selectedUserId);
+  const handleConfirmDelete = async () => {
+    try {
+      await onDelete(selectedUserId);
+    } catch (error) {
+      console.error('Error deleting user:', error);
+    }
+
     setShowDeleteModal(false);
     setSelectedUserId(null);
   };
