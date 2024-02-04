@@ -5,6 +5,8 @@
 .home-page-container{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: $dark;
     height: 100vh;
     width: 100vw;
